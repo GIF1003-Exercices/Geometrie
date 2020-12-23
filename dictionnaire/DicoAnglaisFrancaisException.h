@@ -9,6 +9,7 @@
 #define DICOANGLAISFRANCAISEXCEPTION_H_
 
 #include <stdexcept>
+#include <string>
 
 class DicoAnglaisFrancaisException : public std::runtime_error {
 public:
@@ -21,6 +22,7 @@ private:
 public:
 	MotNonTrouveException(std::string mot) : DicoAnglaisFrancaisException(mot), m_mot(mot) {};
 	std::string reqMot() const {return m_mot;} ;
+	const char* what() const noexcept;
 
 
 
